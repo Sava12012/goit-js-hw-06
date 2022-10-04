@@ -17,15 +17,13 @@
 // Category: Technologies
 // Elements: 5
 
-const ulRef = document.querySelectorAll("#categories ul");
+const categoriesRef = document.querySelector('#categories');
+console.log("Number of categories:", categoriesRef.children.length);
 
-
-
-
-// console.log(ulRef[0].children.length);
-
- const numberRef = ulRef.forEach(element, index => {
-    return `Number of categories: ${element.children.length}`;
- });
- console.log("numberRef", numberRef)
-console.log(numberRef);
+for (const item of categoriesRef.children) {
+   const headerTextContent = item.firstElementChild.textContent;
+   console.log("Category:", headerTextContent)
+   
+   const childrenOfsubCategory = item.lastElementChild.children;
+   console.log("Elements:", childrenOfsubCategory.length)
+}
