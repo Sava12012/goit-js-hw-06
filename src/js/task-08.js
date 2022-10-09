@@ -20,15 +20,15 @@
 // Для доступу до елементів форми використовуй властивість elements.
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
-const form = document.querySelector(".login-form");
-
-form.addEventListener("submit", (event) => {
+const formRef = document.querySelector(".login-form");
+// console.log(formRef.elements)
+formRef.addEventListener("submit", (event) => {
     event.preventDefault();
     const {elements: { email, password }} = event.currentTarget;
     if (email.value === "" || password.value === "") { 
       alert("Всі поля повинні бути заповнені!");
     } else {
     console.log({ "email": email.value, "password": password.value });
-      form.reset();
+      formRef.reset();
     }
-  });
+});
